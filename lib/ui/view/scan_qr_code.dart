@@ -18,67 +18,62 @@ class ScanQrCode extends StatelessWidget {
           children: [
             Container(
               margin: const EdgeInsets.only(top: 75),
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    topLeft: Radius.circular(30),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30),
+                  topLeft: Radius.circular(30),
+                ),
+                color: Colors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const AppBarScanQrCode(
+                      imageIcon: 'assets/images/Group 11.svg'),
+                  const TextBody(
+                    titel: 'Scan OR code',
+                    body:
+                        '''Place qr code inside the frame to scan please avoid shake to get results quickly''',
                   ),
-                  color: Colors.white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const AppBarScanQrCode(
-                        imageIcon: 'assets/images/Group 11.svg'),
-                    const TextBody(
-                      titel: 'Scan OR code',
-                      body:
-                          '''Place qr code inside the frame to scan please avoid shake to get results quickly''',
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height < 700 ? 20 : 75,
+                  ),
+                  SizedBox(
+                    height: 180,
+                    width: 180,
+                    child: SvgPicture.asset('assets/images/Group 10.svg'),
+                  ),
+                  const SizedBox(
+                    height: 17,
+                  ),
+                  const Text(
+                    'Scanning Code...',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromRGBO(0, 0, 0, 0.55),
                     ),
-                    SizedBox(
-                      height:
-                          MediaQuery.of(context).size.height < 700 ? 20 : 75,
-                    ),
-                    SizedBox(
-                      height: 180,
-                      width: 180,
-                      child: SvgPicture.asset('assets/images/Group 10.svg'),
-                    ),
-                    const SizedBox(
-                      height: 17,
-                    ),
-                    const Text(
-                      'Scanning Code...',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromRGBO(0, 0, 0, 0.55),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    const IconsBar(),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    ConstTextButton(
-                        text: 'Place Camera Code',
-                        onPressed: () {
-                          Navigator.of(context)
-                              .pushReplacement(MaterialPageRoute(
-                            builder: (context) => const ScanningResult(),
-                          ));
-                        }),
-                    SizedBox(
-                      height:
-                          MediaQuery.of(context).size.height < 700 ? 20 : 85,
-                    )
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const IconsBar(),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  ConstTextButton(
+                      text: 'Place Camera Code',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ScanningResult(),
+                        ));
+                      }),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height < 700 ? 20 : 85,
+                  )
+                ],
               ),
             )
           ],

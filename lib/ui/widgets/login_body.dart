@@ -17,11 +17,11 @@ class LoginBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisSize: MainAxisSize.min,
           children: [
-            const ConstTextFormField(),
+            const ConstTextFormField(hint: 'Enter your Password'),
             const SizedBox(
               height: 16,
             ),
-            const ConstTextFormField(),
+            const ConstTextFormField(hint: 'Password'),
             const SizedBox(
               height: 24,
             ),

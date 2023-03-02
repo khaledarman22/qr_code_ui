@@ -15,45 +15,41 @@ class ScanningResult extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: const EdgeInsets.only(top: 75),
-                width: MediaQuery.of(context).size.width,
-                // height: MediaQuery.of(context).size.height - 75,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
+              margin: const EdgeInsets.only(top: 75),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+                color: Colors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const AppBarScanQrCode(
+                      imageIcon: 'assets/images/Group 9.svg'),
+                  const TextBody(
+                    titel: 'Scanning Result',
+                    body:
+                        '''Proreader will Keep your last 10 days history to keep your all scared history please purched our pro package''',
                   ),
-                  color: Colors.white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const AppBarScanQrCode(
-                        imageIcon: 'assets/images/Group 9.svg'),
-                    const TextBody(
-                      titel: 'Scanning Result',
-                      body:
-                          '''Proreader will Keep your last 10 days history to keep your all scared history please purched our pro package''',
-                    ),
-                    SizedBox(
-                      height:
-                          MediaQuery.of(context).size.height < 700 ? 20 : 75,
-                    ),
-                    const LsitViewItems(),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    Container(
-                        margin: const EdgeInsets.only(top: 24),
-                        child: ConstTextButton(text: 'Send', onPressed: () {})),
-                    SizedBox(
-                      height:
-                          MediaQuery.of(context).size.height < 700 ? 20 : 85,
-                    )
-                  ],
-                ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height < 700 ? 20 : 75,
+                  ),
+                  const LsitViewItems(),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Container(
+                      margin: const EdgeInsets.only(top: 24),
+                      child: ConstTextButton(text: 'Send', onPressed: () {})),
+                  // SizedBox(
+                  //   height:
+                  //       MediaQuery.of(context).size.height < 700 ? 20 : 85,
+                  // )
+                ],
               ),
             )
           ],

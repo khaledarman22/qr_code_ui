@@ -5,9 +5,11 @@ class ConstTextFormField extends StatelessWidget {
     Key? key,
     this.keyboardType = TextInputType.visiblePassword,
     this.validator,
+    required this.hint,
   }) : super(key: key);
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
+  final String hint;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,8 @@ class ConstTextFormField extends StatelessWidget {
           borderSide: const BorderSide(color: Color(0xffDFDCDC)),
           borderRadius: BorderRadius.circular(5.0),
         ),
-        hintText: 'Enter your phone',
+        suffixIcon: hint == 'Password' ? Icon(Icons.visibility) : null,
+        hintText: hint,
         hintStyle: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
